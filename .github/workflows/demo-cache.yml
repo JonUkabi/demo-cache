@@ -24,3 +24,9 @@ jobs:
       - name: npm install
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: npm install
+
+      - name: Upload artifact for deployment job
+        uses: actions/upload-artifact@v2
+        with:
+          name: dependencias
+          path: node_modules
